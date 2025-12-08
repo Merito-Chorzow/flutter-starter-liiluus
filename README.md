@@ -1,5 +1,89 @@
+# Geo Journal (Flutter)
+
+Geo Journal to lekka aplikacja mobilno-webowa napisana we Flutterze (Dart), która pozwala dodawać wpisy z opisem oraz zapisywać do nich bieżącą lokalizację GPS.
+
+Projekt został wykonany w ramach zadania zaliczeniowego z Fluttera.
+
+---
+
+## Zakres funkcjonalny
+
+Aplikacja wykorzystuje GPS urządzenia (pakiet geolocator):
+
+- możliwość pobrania aktualnych współrzędnych,
+- zapis lokalizacji razem z dodawanym wpisem,
+- obsługa braku lub odmowy uprawnień do lokalizacji.
+
+# Komunikacja z API
+
+Aplikacja łączy się z zewnętrznym API (MockAPI):
+- GET /entries – pobieranie wszystkich wpisów,
+- POST /entries – dodawanie nowego wpisu.
+---
+
+## Widoki aplikacji
+
+1. **Lista wpisów**
+- prezentacja zapisanych pozycji,
+- widoczne informacje o dacie i lokalizacji,
+- obsługa stanów: pusty, ładowanie, błąd.
+
+2. **Szczegóły wpisu**
+   - tytuł,
+   - opis,
+   - data utworzenia,
+   - lokalizacja (jeśli została zapisana).
+
+3. **Dodaj wpis**
+   - formularz (tytuł, opis),
+   - przycisk „Pobierz lokalizację” (GPS),
+   - zapis danych do API.
+
+4. **Ustawienia**
+   - przełącznik jasny / ciemny motyw aplikacji.
+
+---
+
+## Nawigacja
+- z listy do szczegółów (z przekazaniem danych wpisu),
+- z listy do dodawania wpisu,
+- z listy do ustawień.
+
+---
+
+## Obsługa stanów UX
+
+- **Ładowanie** – wskaźnik CircularProgressIndicator,
+- **Pusty stan** – komunikat przy braku wpisów,
+- **Błąd API / brak internetu** – komunikat z możliwością ponowienia,
+- **Brak uprawnień lokalizacji** – komunikat informujący użytkownika.
+
+---
+
+## Użyte technologie
+
+- Flutter (Dart)
+- HTTP (`http`)
+- GPS (`geolocator`)
+- MockAPI (REST API)
+
+---
+
+## Uruchomienie projektu
+
+### Wymagania
+- Flutter SDK
+- Android Emulator lub przeglądarka (Chrome)
+- VS Code lub Android Studio
+
+### Kroki
+
+```bash
+flutter pub get
+flutter run
+=======
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/VcFknM5q)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=21969009&assignment_repo_type=AssignmentRepo)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=21969001&assignment_repo_type=AssignmentRepo)
 # Flutter: Geo Journal
 
 ## Cel
